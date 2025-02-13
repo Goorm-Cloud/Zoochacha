@@ -1,2 +1,2 @@
 # Zoochacha
-Zoochacha - A Flask-Based MonoRepo
+Zoochacha - A Flask-Based MSA MonoRepo
