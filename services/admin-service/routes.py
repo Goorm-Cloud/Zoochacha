@@ -8,7 +8,6 @@ from .views.reservation import add_reservation, edit_reservation, delete_reserva
 admin_bp = Blueprint('routes', __name__, url_prefix='/admin')
 
 
-
 # 로그인 관련 라우트
 @admin_bp.route('/login')
 def login_route():
