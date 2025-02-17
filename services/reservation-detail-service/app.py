@@ -3,7 +3,7 @@ from common import config, db, migrate
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder="services/common/templates")
     app.config.from_object(config)
 
     #ORM
