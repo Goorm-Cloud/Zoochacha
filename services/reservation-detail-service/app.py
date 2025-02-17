@@ -14,4 +14,3 @@ def create_app():
         migrate.init_app(app, db)
     from common import models
     return app
-
