@@ -9,7 +9,6 @@ login_bp = Blueprint('login_bp', __name__)
 admin_bp = Blueprint('admin_bp', __name__, url_prefix='/admin')
 
 
-
 # 로그인 관련 라우트
 @login_bp.route('/login')
 def login_route():
