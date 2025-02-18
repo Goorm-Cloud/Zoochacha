@@ -1,34 +1,36 @@
 from flask import Blueprint
 from .views.auth import login, role_check, authorize, logout
-from .views.admin import admin_dashboard
+from .views.admin_list import admin_dashboard
 from .views.reservation import add_reservation, edit_reservation, delete_reservation, reservation_detail
 
 
 # bp 생성
-admin_bp = Blueprint('routes', __name__, url_prefix='/admin')
+login_bp = Blueprint('login_bp', __name__)
+admin_bp = Blueprint('admin_bp', __name__, url_prefix='/admin')
 
 
 
 # 로그인 관련 라우트
-@admin_bp.route('/login')
+@login_bp.route('/login')
 def login_route():
     return login()
 
-@admin_bp.route('/role_check')
+
+@login_bp.route('/role_check')
 def role_check_route():
     return role_check()
 
-@admin_bp.route('/authorize')
+@login_bp.route('/authorize')
 def authorize_route():
     return authorize()
 
-@admin_bp.route('/logout')
+@login_bp.route('/logout')
 def logout_route():
     return logout()
 
 
 
-# 예약 관련 라우트
+# 관리자 관련 라우트
 @admin_bp.route('/')
 def admin_dashboard_route():
     return admin_dashboard()

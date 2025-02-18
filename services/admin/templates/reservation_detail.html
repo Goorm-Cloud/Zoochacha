@@ -17,8 +17,8 @@
     </div>
 
     <div class="mt-4 text-center">
-        <a href="{{ url_for('routes.edit_reservation_route', reservation_id=reservation.id) }}" class="btn btn-warning">수정하기</a>
-        <a href="{{ url_for('routes.delete_reservation_route', reservation_id=reservation.id) }}" class="btn btn-danger">삭제하기</a>
-        <a href="{{ url_for('routes.admin_dashboard_route') }}" class="btn btn-secondary">뒤로 가기</a>
+        <a href="{{ url_for('admin_bp.edit_reservation_route', reservation_id=reservation.id) }}" class="btn btn-warning">수정하기</a>
+        <a href="{{ url_for('admin_bp.delete_reservation_route', reservation_id=reservation.id) }}" class="btn btn-danger">삭제하기</a>
+        <a href="{{ url_for('admin_bp.admin_dashboard_route') }}" class="btn btn-secondary">뒤로 가기</a>
     </div>
 {% endblock %}

@@ -6,7 +6,8 @@ import os
 
 
 # 데이터베이스 연결
-db_path = os.path.abspath("parking.db")
+#db_path = os.path.abspath("parking.db")
+db_path = os.path.abspath("services/admin/parking.db")
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
@@ -23,8 +24,14 @@ for _ in range(50):
     role = random.choice(["admin", "user"])  # VARCHAR(5) 제한
 
     users.append((user_id, name, gender, email, age, phone, role))
+    # cursor.execute("""
+    #     INSERT INTO user (user_id, name, gender, email, age, phone, role)
+    #     VALUES (?, ?, ?, ?, ?, ?, ?)
+    # """, (user_id, name, gender, email, age, phone, role))
+    
+    # id중복 발생 가능성으로 인해, 아래 코드로 수정
     cursor.execute("""
-        INSERT INTO user (user_id, name, gender, email, age, phone, role)
+        INSERT OR REPLACE INTO user (user_id, name, gender, email, age, phone, role)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (user_id, name, gender, email, age, phone, role))
 

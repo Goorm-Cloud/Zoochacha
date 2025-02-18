@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-5">
         <h2>✏️ 예약 수정</h2>
-        <form action="{{ url_for('routes.edit_reservation_route', reservation_id=reservation.id) }}" method="POST">
+        <form action="{{ url_for('admin_bp.edit_reservation_route', reservation_id=reservation.id) }}" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">사용자 이름</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ reservation.name }}" required>
@@ -30,7 +30,7 @@
                 <input type="time" class="form-control" id="time" name="time" value="{{ reservation.time }}" required>
             </div>
             <button type="submit" class="btn btn-success">수정 완료</button>
-            <a href="{{ url_for('routes.admin_dashboard_route') }}" class="btn btn-secondary">취소</a>
+            <a href="{{ url_for('admin_bp.admin_dashboard_route') }}" class="btn btn-secondary">취소</a>
         </form>
     </div>
 </body>
