@@ -171,3 +171,5 @@ config.py
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/flask.DS_Store
+
+.DS_Store.DS_Store
