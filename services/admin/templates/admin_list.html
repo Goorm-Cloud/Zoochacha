@@ -8,7 +8,7 @@
 
     <!-- 예약 추가 버튼 추가 -->
     <div class="text-end mb-4">
-        <a href="{{ url_for('routes.add_reservation_route') }}" class="btn btn-success">예약 추가</a>
+        <a href="{{ url_for('admin_bp.add_reservation_route') }}" class="btn btn-success">예약 추가</a>
     </div>
 
     <table class="table table-striped table-hover">
@@ -30,7 +30,7 @@
                 <td>{{ res.car_number }}</td>
                 <td>{{ res.date }}</td>
                 <td>{{ res.time }}</td>
-                <td><a href="{{ url_for('routes.reservation_detail_route', reservation_id=res.id) }}" class="btn btn-info btn-sm">상세보기</a></td> <!-- 상세보기 링크 추가 -->
+                <td><a href="{{ url_for('admin_bp.reservation_detail_route', reservation_id=res.id) }}" class="btn btn-info btn-sm">상세보기</a></td> <!-- 상세보기 링크 추가 -->
             </tr>
             {% endfor %}
         </tbody>
